@@ -6,8 +6,75 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D326FF8917B7CC5200CF8309 /* AglImagePool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D326FF8517B7CC5200CF8309 /* AglImagePool.cpp */; };
+		D326FF8A17B7CC5200CF8309 /* AglImagePool.h in Headers */ = {isa = PBXBuildFile; fileRef = D326FF8617B7CC5200CF8309 /* AglImagePool.h */; };
+		D326FF8B17B7CC5200CF8309 /* AglUtilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D326FF8717B7CC5200CF8309 /* AglUtilities.cpp */; };
+		D326FF8C17B7CC5200CF8309 /* AglUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = D326FF8817B7CC5200CF8309 /* AglUtilities.h */; };
+		D326FFAF17B7E3B700CF8309 /* AglSurface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D326FFAD17B7E3B700CF8309 /* AglSurface.cpp */; };
+		D326FFB017B7E3B700CF8309 /* AglSurface.h in Headers */ = {isa = PBXBuildFile; fileRef = D326FFAE17B7E3B700CF8309 /* AglSurface.h */; };
+		D326FFB317B7E56900CF8309 /* AglTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D326FFB117B7E56900CF8309 /* AglTexture.cpp */; };
+		D326FFB417B7E56900CF8309 /* AglTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = D326FFB217B7E56900CF8309 /* AglTexture.h */; };
+		D326FFB717B7E6A000CF8309 /* AglShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D326FFB517B7E6A000CF8309 /* AglShaderProgram.cpp */; };
+		D326FFB817B7E6A000CF8309 /* AglShaderProgram.h in Headers */ = {isa = PBXBuildFile; fileRef = D326FFB617B7E6A000CF8309 /* AglShaderProgram.h */; };
+		D326FFBB17B7E7F700CF8309 /* AglSurfacePNT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D326FFB917B7E7F700CF8309 /* AglSurfacePNT.cpp */; };
+		D326FFBC17B7E7F700CF8309 /* AglSurfacePNT.h in Headers */ = {isa = PBXBuildFile; fileRef = D326FFBA17B7E7F700CF8309 /* AglSurfacePNT.h */; };
+		D326FFBF17B7EAA000CF8309 /* AglVertexShaderPNT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D326FFBD17B7EAA000CF8309 /* AglVertexShaderPNT.cpp */; };
+		D326FFC017B7EAA000CF8309 /* AglVertexShaderPNT.h in Headers */ = {isa = PBXBuildFile; fileRef = D326FFBE17B7EAA000CF8309 /* AglVertexShaderPNT.h */; };
+		D326FFC317B7F30600CF8309 /* AglFragmentShaderPNT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D326FFC117B7F30600CF8309 /* AglFragmentShaderPNT.cpp */; };
+		D326FFC417B7F30600CF8309 /* AglFragmentShaderPNT.h in Headers */ = {isa = PBXBuildFile; fileRef = D326FFC217B7F30600CF8309 /* AglFragmentShaderPNT.h */; };
+		D326FFC717B7F41200CF8309 /* AglTextureUbyte.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D326FFC517B7F41100CF8309 /* AglTextureUbyte.cpp */; };
+		D326FFC817B7F41200CF8309 /* AglTextureUbyte.h in Headers */ = {isa = PBXBuildFile; fileRef = D326FFC617B7F41200CF8309 /* AglTextureUbyte.h */; };
+		D326FFCD17B7F67800CF8309 /* AglShaderProgramSpecific.h in Headers */ = {isa = PBXBuildFile; fileRef = D326FFCA17B7F67800CF8309 /* AglShaderProgramSpecific.h */; };
+		D326FFCE17B7F67800CF8309 /* AglShaderProgramSpecificImp.h in Headers */ = {isa = PBXBuildFile; fileRef = D326FFCB17B7F67800CF8309 /* AglShaderProgramSpecificImp.h */; };
+		D326FFD117B7F84800CF8309 /* AglBasicVertexShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D326FFCF17B7F84800CF8309 /* AglBasicVertexShader.cpp */; };
+		D326FFD217B7F84800CF8309 /* AglBasicVertexShader.h in Headers */ = {isa = PBXBuildFile; fileRef = D326FFD017B7F84800CF8309 /* AglBasicVertexShader.h */; };
+		D326FFD517B7FA5B00CF8309 /* AglPhongOneDirectionalFragmentShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D326FFD317B7FA5B00CF8309 /* AglPhongOneDirectionalFragmentShader.cpp */; };
+		D326FFD617B7FA5B00CF8309 /* AglPhongOneDirectionalFragmentShader.h in Headers */ = {isa = PBXBuildFile; fileRef = D326FFD417B7FA5B00CF8309 /* AglPhongOneDirectionalFragmentShader.h */; };
+		D326FFD917B7FC5900CF8309 /* AglSphericalHarmonicsFragmentShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D326FFD717B7FC5900CF8309 /* AglSphericalHarmonicsFragmentShader.cpp */; };
+		D326FFDA17B7FC5900CF8309 /* AglSphericalHarmonicsFragmentShader.h in Headers */ = {isa = PBXBuildFile; fileRef = D326FFD817B7FC5900CF8309 /* AglSphericalHarmonicsFragmentShader.h */; };
+		D326FFDD17B7FDD500CF8309 /* AglFlattishRectangularSurface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D326FFDB17B7FDD500CF8309 /* AglFlattishRectangularSurface.cpp */; };
+		D326FFDE17B7FDD500CF8309 /* AglFlattishRectangularSurface.h in Headers */ = {isa = PBXBuildFile; fileRef = D326FFDC17B7FDD500CF8309 /* AglFlattishRectangularSurface.h */; };
+		D326FFE117B7FDFD00CF8309 /* AglShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D326FFDF17B7FDFD00CF8309 /* AglShader.cpp */; };
+		D326FFE217B7FDFD00CF8309 /* AglShader.h in Headers */ = {isa = PBXBuildFile; fileRef = D326FFE017B7FDFD00CF8309 /* AglShader.h */; };
+		D326FFE417B8022F00CF8309 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D326FFE317B8022F00CF8309 /* OpenGL.framework */; };
+		D326FFE617B809A900CF8309 /* libIex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D326FFE517B809A900CF8309 /* libIex.dylib */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		D326FF7E17B7CBA000CF8309 /* libAgl.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libAgl.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		D326FF8517B7CC5200CF8309 /* AglImagePool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AglImagePool.cpp; sourceTree = "<group>"; };
+		D326FF8617B7CC5200CF8309 /* AglImagePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglImagePool.h; sourceTree = "<group>"; };
+		D326FF8717B7CC5200CF8309 /* AglUtilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AglUtilities.cpp; sourceTree = "<group>"; };
+		D326FF8817B7CC5200CF8309 /* AglUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglUtilities.h; sourceTree = "<group>"; };
+		D326FFAD17B7E3B700CF8309 /* AglSurface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AglSurface.cpp; sourceTree = "<group>"; };
+		D326FFAE17B7E3B700CF8309 /* AglSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglSurface.h; sourceTree = "<group>"; };
+		D326FFB117B7E56900CF8309 /* AglTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AglTexture.cpp; sourceTree = "<group>"; };
+		D326FFB217B7E56900CF8309 /* AglTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglTexture.h; sourceTree = "<group>"; };
+		D326FFB517B7E6A000CF8309 /* AglShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AglShaderProgram.cpp; sourceTree = "<group>"; };
+		D326FFB617B7E6A000CF8309 /* AglShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglShaderProgram.h; sourceTree = "<group>"; };
+		D326FFB917B7E7F700CF8309 /* AglSurfacePNT.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AglSurfacePNT.cpp; sourceTree = "<group>"; };
+		D326FFBA17B7E7F700CF8309 /* AglSurfacePNT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglSurfacePNT.h; sourceTree = "<group>"; };
+		D326FFBD17B7EAA000CF8309 /* AglVertexShaderPNT.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AglVertexShaderPNT.cpp; sourceTree = "<group>"; };
+		D326FFBE17B7EAA000CF8309 /* AglVertexShaderPNT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglVertexShaderPNT.h; sourceTree = "<group>"; };
+		D326FFC117B7F30600CF8309 /* AglFragmentShaderPNT.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AglFragmentShaderPNT.cpp; sourceTree = "<group>"; };
+		D326FFC217B7F30600CF8309 /* AglFragmentShaderPNT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglFragmentShaderPNT.h; sourceTree = "<group>"; };
+		D326FFC517B7F41100CF8309 /* AglTextureUbyte.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AglTextureUbyte.cpp; sourceTree = "<group>"; };
+		D326FFC617B7F41200CF8309 /* AglTextureUbyte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglTextureUbyte.h; sourceTree = "<group>"; };
+		D326FFCA17B7F67800CF8309 /* AglShaderProgramSpecific.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglShaderProgramSpecific.h; sourceTree = "<group>"; };
+		D326FFCB17B7F67800CF8309 /* AglShaderProgramSpecificImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglShaderProgramSpecificImp.h; sourceTree = "<group>"; };
+		D326FFCF17B7F84800CF8309 /* AglBasicVertexShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AglBasicVertexShader.cpp; sourceTree = "<group>"; };
+		D326FFD017B7F84800CF8309 /* AglBasicVertexShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglBasicVertexShader.h; sourceTree = "<group>"; };
+		D326FFD317B7FA5B00CF8309 /* AglPhongOneDirectionalFragmentShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AglPhongOneDirectionalFragmentShader.cpp; sourceTree = "<group>"; };
+		D326FFD417B7FA5B00CF8309 /* AglPhongOneDirectionalFragmentShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglPhongOneDirectionalFragmentShader.h; sourceTree = "<group>"; };
+		D326FFD717B7FC5900CF8309 /* AglSphericalHarmonicsFragmentShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AglSphericalHarmonicsFragmentShader.cpp; sourceTree = "<group>"; };
+		D326FFD817B7FC5900CF8309 /* AglSphericalHarmonicsFragmentShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglSphericalHarmonicsFragmentShader.h; sourceTree = "<group>"; };
+		D326FFDB17B7FDD500CF8309 /* AglFlattishRectangularSurface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AglFlattishRectangularSurface.cpp; sourceTree = "<group>"; };
+		D326FFDC17B7FDD500CF8309 /* AglFlattishRectangularSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglFlattishRectangularSurface.h; sourceTree = "<group>"; };
+		D326FFDF17B7FDFD00CF8309 /* AglShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AglShader.cpp; sourceTree = "<group>"; };
+		D326FFE017B7FDFD00CF8309 /* AglShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglShader.h; sourceTree = "<group>"; };
+		D326FFE317B8022F00CF8309 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		D326FFE517B809A900CF8309 /* libIex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libIex.dylib; path = ../../../../../../usr/local/lib/libIex.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -15,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D326FFE417B8022F00CF8309 /* OpenGL.framework in Frameworks */,
+				D326FFE617B809A900CF8309 /* libIex.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -24,6 +93,38 @@
 		D326FF7517B7CBA000CF8309 = {
 			isa = PBXGroup;
 			children = (
+				D326FFE517B809A900CF8309 /* libIex.dylib */,
+				D326FFE317B8022F00CF8309 /* OpenGL.framework */,
+				D326FFDF17B7FDFD00CF8309 /* AglShader.cpp */,
+				D326FFE017B7FDFD00CF8309 /* AglShader.h */,
+				D326FFDB17B7FDD500CF8309 /* AglFlattishRectangularSurface.cpp */,
+				D326FFDC17B7FDD500CF8309 /* AglFlattishRectangularSurface.h */,
+				D326FFD717B7FC5900CF8309 /* AglSphericalHarmonicsFragmentShader.cpp */,
+				D326FFD817B7FC5900CF8309 /* AglSphericalHarmonicsFragmentShader.h */,
+				D326FFD317B7FA5B00CF8309 /* AglPhongOneDirectionalFragmentShader.cpp */,
+				D326FFD417B7FA5B00CF8309 /* AglPhongOneDirectionalFragmentShader.h */,
+				D326FFCF17B7F84800CF8309 /* AglBasicVertexShader.cpp */,
+				D326FFD017B7F84800CF8309 /* AglBasicVertexShader.h */,
+				D326FFCA17B7F67800CF8309 /* AglShaderProgramSpecific.h */,
+				D326FFCB17B7F67800CF8309 /* AglShaderProgramSpecificImp.h */,
+				D326FFC517B7F41100CF8309 /* AglTextureUbyte.cpp */,
+				D326FFC617B7F41200CF8309 /* AglTextureUbyte.h */,
+				D326FFC117B7F30600CF8309 /* AglFragmentShaderPNT.cpp */,
+				D326FFC217B7F30600CF8309 /* AglFragmentShaderPNT.h */,
+				D326FFBD17B7EAA000CF8309 /* AglVertexShaderPNT.cpp */,
+				D326FFBE17B7EAA000CF8309 /* AglVertexShaderPNT.h */,
+				D326FFB917B7E7F700CF8309 /* AglSurfacePNT.cpp */,
+				D326FFBA17B7E7F700CF8309 /* AglSurfacePNT.h */,
+				D326FFB517B7E6A000CF8309 /* AglShaderProgram.cpp */,
+				D326FFB617B7E6A000CF8309 /* AglShaderProgram.h */,
+				D326FFB117B7E56900CF8309 /* AglTexture.cpp */,
+				D326FFB217B7E56900CF8309 /* AglTexture.h */,
+				D326FFAD17B7E3B700CF8309 /* AglSurface.cpp */,
+				D326FFAE17B7E3B700CF8309 /* AglSurface.h */,
+				D326FF8517B7CC5200CF8309 /* AglImagePool.cpp */,
+				D326FF8617B7CC5200CF8309 /* AglImagePool.h */,
+				D326FF8717B7CC5200CF8309 /* AglUtilities.cpp */,
+				D326FF8817B7CC5200CF8309 /* AglUtilities.h */,
 				D326FF7F17B7CBA000CF8309 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +144,22 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D326FF8A17B7CC5200CF8309 /* AglImagePool.h in Headers */,
+				D326FF8C17B7CC5200CF8309 /* AglUtilities.h in Headers */,
+				D326FFB017B7E3B700CF8309 /* AglSurface.h in Headers */,
+				D326FFB417B7E56900CF8309 /* AglTexture.h in Headers */,
+				D326FFB817B7E6A000CF8309 /* AglShaderProgram.h in Headers */,
+				D326FFBC17B7E7F700CF8309 /* AglSurfacePNT.h in Headers */,
+				D326FFC017B7EAA000CF8309 /* AglVertexShaderPNT.h in Headers */,
+				D326FFC417B7F30600CF8309 /* AglFragmentShaderPNT.h in Headers */,
+				D326FFC817B7F41200CF8309 /* AglTextureUbyte.h in Headers */,
+				D326FFCD17B7F67800CF8309 /* AglShaderProgramSpecific.h in Headers */,
+				D326FFCE17B7F67800CF8309 /* AglShaderProgramSpecificImp.h in Headers */,
+				D326FFD217B7F84800CF8309 /* AglBasicVertexShader.h in Headers */,
+				D326FFD617B7FA5B00CF8309 /* AglPhongOneDirectionalFragmentShader.h in Headers */,
+				D326FFDA17B7FC5900CF8309 /* AglSphericalHarmonicsFragmentShader.h in Headers */,
+				D326FFDE17B7FDD500CF8309 /* AglFlattishRectangularSurface.h in Headers */,
+				D326FFE217B7FDFD00CF8309 /* AglShader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +214,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D326FF8917B7CC5200CF8309 /* AglImagePool.cpp in Sources */,
+				D326FF8B17B7CC5200CF8309 /* AglUtilities.cpp in Sources */,
+				D326FFAF17B7E3B700CF8309 /* AglSurface.cpp in Sources */,
+				D326FFB317B7E56900CF8309 /* AglTexture.cpp in Sources */,
+				D326FFB717B7E6A000CF8309 /* AglShaderProgram.cpp in Sources */,
+				D326FFBB17B7E7F700CF8309 /* AglSurfacePNT.cpp in Sources */,
+				D326FFBF17B7EAA000CF8309 /* AglVertexShaderPNT.cpp in Sources */,
+				D326FFC317B7F30600CF8309 /* AglFragmentShaderPNT.cpp in Sources */,
+				D326FFC717B7F41200CF8309 /* AglTextureUbyte.cpp in Sources */,
+				D326FFD117B7F84800CF8309 /* AglBasicVertexShader.cpp in Sources */,
+				D326FFD517B7FA5B00CF8309 /* AglPhongOneDirectionalFragmentShader.cpp in Sources */,
+				D326FFD917B7FC5900CF8309 /* AglSphericalHarmonicsFragmentShader.cpp in Sources */,
+				D326FFDD17B7FDD500CF8309 /* AglFlattishRectangularSurface.cpp in Sources */,
+				D326FFE117B7FDFD00CF8309 /* AglShader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +295,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -172,6 +305,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -195,6 +330,7 @@
 				D326FF8417B7CBA000CF8309 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
