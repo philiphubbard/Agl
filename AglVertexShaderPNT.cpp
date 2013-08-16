@@ -193,19 +193,6 @@ namespace Agl
                         modelView[2][0], modelView[2][1], modelView[2][2]);
         Imath::M33f normalMatrix = (rot.inverse()).transposed();
         
-#if 0
-        // HEY!! Old
-        // (m^-1)^t
-        // HEY!! This approach assumes there is no scaling in modelView.
-        // Switch to Imath, which has a 3x3 matrix class and a routine for
-        // getting the normal matrix.
-        
-        GLfloat normalMatrix [3*3];
-        normalMatrix[0] = modelView[0][0]; normalMatrix[1] = modelView[0][1]; normalMatrix[2] = modelView[0][2];
-        normalMatrix[3] = modelView[1][0]; normalMatrix[4] = modelView[1][1]; normalMatrix[5] = modelView[1][2];
-        normalMatrix[6] = modelView[2][0]; normalMatrix[7] = modelView[2][1]; normalMatrix[8] = modelView[2][2];
-#endif
-        
         glUniformMatrix3fv(_m->normalMatrixUniform, 1, GL_FALSE,
                            normalMatrix.getValue());
     }

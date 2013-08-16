@@ -38,9 +38,11 @@ namespace Agl
         ImagePool();
         ~ImagePool();
         
-        void        setSize(GLsizei width, GLsizei height, GLsizei bytesPerPixel);
-        GLsizei     width() const;
-        GLsizei     height() const;
+        void        setImageSize (GLsizei width, GLsizei height,
+                                  GLsizei bytesPerPixel);
+        
+        GLsizei     imageWidth() const;
+        GLsizei     imageHeight() const;
         GLsizei     bytesPerPixel() const;
         
         GLubyte*    alloc();

@@ -56,7 +56,8 @@ namespace Agl
         }
     }
     
-    void ImagePool::setSize(GLsizei width, GLsizei height, GLsizei bytesPerPixel)
+    void ImagePool::setImageSize(GLsizei width, GLsizei height,
+                                 GLsizei bytesPerPixel)
     {
         std::lock_guard<std::mutex> lock(_m->mutex);
         
@@ -75,13 +76,13 @@ namespace Agl
         }
     }
 
-    GLsizei ImagePool::width() const
+    GLsizei ImagePool::imageWidth() const
     {
         std::lock_guard<std::mutex> lock(_m->mutex);
         return _m->width;
     }
     
-    GLsizei ImagePool::height() const
+    GLsizei ImagePool::imageHeight() const
     {
         std::lock_guard<std::mutex> lock(_m->mutex);
         return _m->height;

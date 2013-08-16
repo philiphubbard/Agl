@@ -27,6 +27,11 @@
 #ifndef __AglShader__
 #define __AglShader__
 
+// Note that when using the profile for OpenGL version 3.2, it is important
+// to use the OpenGL/gl3.h header instead of the OpenGL/gl.h header (and thus
+// the versions of glGenVertexArray and glBindVertexArray without the APPLE
+// extension).
+
 #include <OpenGL/gl3.h>
 #include <memory>
 
