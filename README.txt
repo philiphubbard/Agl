@@ -26,6 +26,8 @@ Building
 
 Agl depends on the Imath library from the IlmBase part of the OpenEXR project.  This code is available on Github or from http://www.openexr.com/downloads.html.
 
+Agl uses a few C++11 features, like range-based loops.  It should not be difficult to remove those features if necessary.
+
 Agl was developed in Xcode (specifically, version 4.6.3). The Xcode project build settings assume that Imath has been installed with header files in /usr/local/include and libraries in /usr/local/lib.  In the "Build Settings," the "Header Search Paths" is set to "/usr/local/include", allowing source code to have include statements like the following:
 
 	#include <OpenEXR/ImathMatrix.h>
@@ -33,4 +35,7 @@ Agl was developed in Xcode (specifically, version 4.6.3). The Xcode project buil
 
 Future Work
 
-* 
+* The Apple "OpenGL Programming Guide for Mac" states that the texture format and data type "GL_RGBA and GL_UNSIGNED_BYTE needs to be swizzled by many cards when the data is loaded".  Consider switching to one of the recommended combinations, like GL_BGRA and GL_UNSIGNED_SHORT_1_5_5_5_REV.
+
+* The Apple "OpenGL ES Programming Guide for iOS" states that vertex array objects are more efficient in iOS if vertex data is interleaved.  Consider switching to this approach. 
+

@@ -47,14 +47,14 @@ namespace Agl
         virtual ~TextureUbyte();
 
         // Set the data of the texture.  Note that the mipmapping is disabled
-        // for the texture, so only one piece of data is necessary.  Note also
-        // that the caller retains ownership of the data.  The internalFormat and
-        // format arguments have the same meanings as for glTexImage2D().  The
-        // rowLength, skipPixels and skipRows arguments set the
-        // GL_UNPACK_ROW_LENGTH, GL_UNPACK_SKIP_PIXELS and GL_UNPACK_SKIP_ROWS
-        // parameters, respectively, allowing the texture to be set from a smaller
-        // region within the data argument (if the arguments have values other
-        // than their default values of 0).
+        // for the texture, so only one piece of data is necessary (which makes
+        // sense forthe Facetious application since the data is being updated
+        // repeatedly from the video camera).  Note a format arguments have the
+        // same meanings as for glTexImage2D().  The rowLength, skipPixels and
+        // skipRows arguments set the GL_UNPACK_ROW_LENGTH, GL_UNPACK_SKIP_PIXELS
+        // and GL_UNPACK_SKIP_ROWS parameters, respectively, allowing the texture to
+        // be set from a smaller region within the data argument (if the arguments
+        // have values otherthan their default values of 0).
         
         void    setData(GLubyte* data, GLsizei width, GLsizei height,
                         GLint internalFormat = GL_RGBA,
