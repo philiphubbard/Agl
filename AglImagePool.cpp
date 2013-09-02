@@ -21,7 +21,7 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglImagePool.cpp
+// AglImagePool.cpp
 //
 
 #include "AglImagePool.h"
@@ -61,19 +61,15 @@ namespace Agl
     {
         std::lock_guard<std::mutex> lock(_m->mutex);
         
-        if ((width != _m->width) || (height != _m->height) ||
-            (bytesPerPixel != _m->bytesPerPixel))
+        if ((_m->width != 0) || (_m->height != 0) || (_m->bytesPerPixel != 0))
         {
-            _m->width = width;
-            _m->height = height;
-            _m->bytesPerPixel = bytesPerPixel;
-            
-            while (!_m->pool.empty())
-            {
-                delete [] _m->pool.back();
-                _m->pool.pop_back();
-            }
+            throw std::runtime_error("Agl::ImagePool::setImageSize() "
+                                     "can be called only once");
         }
+        
+        _m->width = width;
+        _m->height = height;
+        _m->bytesPerPixel = bytesPerPixel;
     }
 
     GLsizei ImagePool::imageWidth() const
@@ -97,6 +93,13 @@ namespace Agl
     GLubyte* ImagePool::alloc()
     {
         std::lock_guard<std::mutex> lock(_m->mutex);
+        
+        if ((_m->width == 0) || (_m->height == 0) || (_m->bytesPerPixel == 0))
+        {
+            throw std::runtime_error("Agl::ImagePool::setImageSize() "
+                                     "must be called (once) to set a non-zero "
+                                     "image size");
+        }
         
         if (_m->pool.empty())
         {

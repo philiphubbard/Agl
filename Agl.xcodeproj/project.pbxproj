@@ -47,8 +47,8 @@
 		D326FF8617B7CC5200CF8309 /* AglImagePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglImagePool.h; sourceTree = "<group>"; };
 		D326FF8717B7CC5200CF8309 /* AglUtilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AglUtilities.cpp; sourceTree = "<group>"; };
 		D326FF8817B7CC5200CF8309 /* AglUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglUtilities.h; sourceTree = "<group>"; };
-		D326FFAD17B7E3B700CF8309 /* AglSurface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AglSurface.cpp; sourceTree = "<group>"; };
-		D326FFAE17B7E3B700CF8309 /* AglSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglSurface.h; sourceTree = "<group>"; };
+		D326FFAD17B7E3B700CF8309 /* AglSurface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = AglSurface.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		D326FFAE17B7E3B700CF8309 /* AglSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AglSurface.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		D326FFB117B7E56900CF8309 /* AglTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AglTexture.cpp; sourceTree = "<group>"; };
 		D326FFB217B7E56900CF8309 /* AglTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglTexture.h; sourceTree = "<group>"; };
 		D326FFB517B7E6A000CF8309 /* AglShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AglShaderProgram.cpp; sourceTree = "<group>"; };
@@ -75,6 +75,7 @@
 		D326FFE017B7FDFD00CF8309 /* AglShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglShader.h; sourceTree = "<group>"; };
 		D326FFE317B8022F00CF8309 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		D326FFE517B809A900CF8309 /* libIex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libIex.dylib; path = ../../../../../../usr/local/lib/libIex.dylib; sourceTree = "<group>"; };
+		D39A511D17D230410026F899 /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,36 +96,37 @@
 			children = (
 				D326FFE517B809A900CF8309 /* libIex.dylib */,
 				D326FFE317B8022F00CF8309 /* OpenGL.framework */,
-				D326FFDF17B7FDFD00CF8309 /* AglShader.cpp */,
 				D326FFE017B7FDFD00CF8309 /* AglShader.h */,
-				D326FFDB17B7FDD500CF8309 /* AglFlattishRectangularSurface.cpp */,
-				D326FFDC17B7FDD500CF8309 /* AglFlattishRectangularSurface.h */,
-				D326FFD717B7FC5900CF8309 /* AglSphericalHarmonicsFragmentShader.cpp */,
-				D326FFD817B7FC5900CF8309 /* AglSphericalHarmonicsFragmentShader.h */,
-				D326FFD317B7FA5B00CF8309 /* AglPhongOneDirectionalFragmentShader.cpp */,
-				D326FFD417B7FA5B00CF8309 /* AglPhongOneDirectionalFragmentShader.h */,
-				D326FFCF17B7F84800CF8309 /* AglBasicVertexShader.cpp */,
-				D326FFD017B7F84800CF8309 /* AglBasicVertexShader.h */,
+				D326FFDF17B7FDFD00CF8309 /* AglShader.cpp */,
+				D326FFB617B7E6A000CF8309 /* AglShaderProgram.h */,
+				D326FFB517B7E6A000CF8309 /* AglShaderProgram.cpp */,
+				D326FFAE17B7E3B700CF8309 /* AglSurface.h */,
+				D326FFAD17B7E3B700CF8309 /* AglSurface.cpp */,
+				D326FFB217B7E56900CF8309 /* AglTexture.h */,
+				D326FFB117B7E56900CF8309 /* AglTexture.cpp */,
 				D326FFCA17B7F67800CF8309 /* AglShaderProgramSpecific.h */,
 				D326FFCB17B7F67800CF8309 /* AglShaderProgramSpecificImp.h */,
-				D326FFC517B7F41100CF8309 /* AglTextureUbyte.cpp */,
-				D326FFC617B7F41200CF8309 /* AglTextureUbyte.h */,
-				D326FFC117B7F30600CF8309 /* AglFragmentShaderPNT.cpp */,
-				D326FFC217B7F30600CF8309 /* AglFragmentShaderPNT.h */,
-				D326FFBD17B7EAA000CF8309 /* AglVertexShaderPNT.cpp */,
 				D326FFBE17B7EAA000CF8309 /* AglVertexShaderPNT.h */,
-				D326FFB917B7E7F700CF8309 /* AglSurfacePNT.cpp */,
+				D326FFBD17B7EAA000CF8309 /* AglVertexShaderPNT.cpp */,
+				D326FFC217B7F30600CF8309 /* AglFragmentShaderPNT.h */,
+				D326FFC117B7F30600CF8309 /* AglFragmentShaderPNT.cpp */,
 				D326FFBA17B7E7F700CF8309 /* AglSurfacePNT.h */,
-				D326FFB517B7E6A000CF8309 /* AglShaderProgram.cpp */,
-				D326FFB617B7E6A000CF8309 /* AglShaderProgram.h */,
-				D326FFB117B7E56900CF8309 /* AglTexture.cpp */,
-				D326FFB217B7E56900CF8309 /* AglTexture.h */,
-				D326FFAD17B7E3B700CF8309 /* AglSurface.cpp */,
-				D326FFAE17B7E3B700CF8309 /* AglSurface.h */,
-				D326FF8517B7CC5200CF8309 /* AglImagePool.cpp */,
+				D326FFB917B7E7F700CF8309 /* AglSurfacePNT.cpp */,
+				D326FFDC17B7FDD500CF8309 /* AglFlattishRectangularSurface.h */,
+				D326FFDB17B7FDD500CF8309 /* AglFlattishRectangularSurface.cpp */,
+				D326FFD817B7FC5900CF8309 /* AglSphericalHarmonicsFragmentShader.h */,
+				D326FFD717B7FC5900CF8309 /* AglSphericalHarmonicsFragmentShader.cpp */,
+				D326FFD417B7FA5B00CF8309 /* AglPhongOneDirectionalFragmentShader.h */,
+				D326FFD317B7FA5B00CF8309 /* AglPhongOneDirectionalFragmentShader.cpp */,
+				D326FFD017B7F84800CF8309 /* AglBasicVertexShader.h */,
+				D326FFCF17B7F84800CF8309 /* AglBasicVertexShader.cpp */,
+				D326FFC617B7F41200CF8309 /* AglTextureUbyte.h */,
+				D326FFC517B7F41100CF8309 /* AglTextureUbyte.cpp */,
 				D326FF8617B7CC5200CF8309 /* AglImagePool.h */,
-				D326FF8717B7CC5200CF8309 /* AglUtilities.cpp */,
+				D326FF8517B7CC5200CF8309 /* AglImagePool.cpp */,
 				D326FF8817B7CC5200CF8309 /* AglUtilities.h */,
+				D326FF8717B7CC5200CF8309 /* AglUtilities.cpp */,
+				D39A511D17D230410026F899 /* README.txt */,
 				D326FF7F17B7CBA000CF8309 /* Products */,
 			);
 			sourceTree = "<group>";

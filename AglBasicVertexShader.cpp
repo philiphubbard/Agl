@@ -21,7 +21,7 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglBasicVertexShader.cpp
+// AglBasicVertexShader.cpp
 //
 
 #include "AglBasicVertexShader.h"
@@ -33,12 +33,10 @@ namespace Agl
     class BasicVertexShader::Imp
     {
     public:
-        static const char*  text;
-        GLint               defaultTextureWrapS;
-        GLint               defaultTextureWrapT;
+        static const char*  code;
     };
     
-    const char* BasicVertexShader::Imp::text =
+    const char* BasicVertexShader::Imp::code =
     "#version 150\n"
     "uniform mat4 modelViewProjMatrix;\n"
     "uniform mat3 normalMatrix;\n"
@@ -55,7 +53,7 @@ namespace Agl
     "}\n";
     
     BasicVertexShader::BasicVertexShader() :
-        VertexShaderPNT(Imp::text), _m(new Imp)
+        VertexShaderPNT(Imp::code), _m(new Imp)
     {
     }
     

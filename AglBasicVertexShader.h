@@ -21,7 +21,11 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglShader.h
+// AglBasicVertexShader.h
+//
+// A class derived from Agl::VertexShaderPNT for a simple GLSL vertex shader,
+// which simply transforms the positions and normals and passes through the
+// texture coordinates.
 //
 
 #ifndef __AglBasicVertexShader__
@@ -35,10 +39,14 @@ namespace Agl
     class BasicVertexShader : public VertexShaderPNT
     {
     public:
+        
         BasicVertexShader();
         virtual ~BasicVertexShader();
         
     protected:
+        
+        // Redefinitions of virtual functions from Agl::VertexShaderPNT.
+        
         virtual const char* modelViewProjectionMatrixUniformName() const;
         virtual const char* normalMatrixUniformName() const;
         
@@ -47,6 +55,9 @@ namespace Agl
         virtual const char* texCoordAttributeName() const;
         
     private:
+
+        // Details of the class' data are hidden in the .cpp file.
+        
         class Imp;
         std::unique_ptr<Imp> _m;
     };

@@ -21,7 +21,9 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglUtilities.h
+// AglUtilities.h
+//
+// An assortment of OpenGL-related utility functions.
 //
 
 #ifndef __AglUtilities__
@@ -39,7 +41,15 @@ namespace Agl
     
     std::string errorString(GLenum error);
     
-    //
+    // Reduce an image by a factor of two in width and in height.  The orig
+    // argument is the original image to be reduced, and the result argument
+    // is where the reduced image will be stored (and must be allocated by the
+    // caller with sufficient size).  The width, height and bytesPerPixel
+    // arguments specify the dimensions of the original image.  If rowLength,
+    // skipPixels and skipRows are set to non-default values, they specify a
+    // region within the original image (like the GL_UNPACK_ROW_LENGTH,
+    // GL_UNPACK_SKIP_PIXELS and GL_UNPACK_SKIP_ROWS parameters, respectively),
+    // and that region is what will be reduced and stored as the result.
     
     void        reduceImageBy2(GLubyte* result, const GLubyte* orig,
                                GLsizei width, GLsizei height,

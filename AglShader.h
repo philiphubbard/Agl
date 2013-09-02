@@ -21,16 +21,13 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglShader.h
+// AglShader.h
+//
+// A base class for a GLSL shader.
 //
 
 #ifndef __AglShader__
 #define __AglShader__
-
-// Note that when using the profile for OpenGL version 3.2, it is important
-// to use the OpenGL/gl3.h header instead of the OpenGL/gl.h header (and thus
-// the versions of glGenVertexArray and glBindVertexArray without the APPLE
-// extension).
 
 #include <OpenGL/gl3.h>
 #include <memory>
@@ -43,23 +40,43 @@ namespace Agl
     class Shader
     {
     public:
-        Shader (GLenum type, const std::string& text);
+        
+        // The type argument is the OpenGL shader type, like GL_VERTEX_SHADER or
+        // GL_FRAGMENT_SHADER.  The code argument is the text of the GLSL shader
+        // code.
+        
+        Shader (GLenum type, const std::string& code);
         virtual ~Shader();
+        
+        // Access the OpenGL shader type.
         
         GLenum               type() const;
         
+        // Compile the shader.  Any errors cause std::invalid_argument exceptions
+        // to be thrown.
+        
         void                 build();
+        
+        // Access the identifier for the successfully built shader.
+        
         GLuint               id() const;
+        
+        // Access the ShaderProgram with which this shader is associated.
         
         ShaderProgram*       shaderProgram();
         const ShaderProgram* shaderProgram() const;
         
     private:
+        
+        // Details of the class' data are hidden in the .cpp file.
+        // This pattern also prevents instances from being copied, which makes
+        // sense  because copies would share OpenGL resource that would get
+        // released when one instance is deleted.
+
         class Imp;
         std::unique_ptr<Imp> _m;
         
-        // Instances cannot be copied, because copies would share OpenGL resource
-        // that would get released when one instance is deleted.
+        // The ShaderProgram associates itself with this shader.
 
         friend class ShaderProgram;
         void                 setShaderProgram(ShaderProgram*);

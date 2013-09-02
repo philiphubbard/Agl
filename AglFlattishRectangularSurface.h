@@ -21,7 +21,12 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglFlattishRectuangularSurface.h
+// AglFlattishRectuangularSurface.h
+//
+// A class derived from Agl::SurfacePNT to represent a tessellated rectangle
+// that is either flat, or almost flat with a curved "bulge" in the Z dimension
+// (the bulge being highest in the middle).  The X and Y coordinates of the
+// surface's vertices run from -0.5 to 0.5.
 //
 
 #ifndef __AglFlattishRectangularSurface__
@@ -35,9 +40,16 @@ namespace Agl
     class FlattishRectangularSurface : public SurfacePNT
     {
     public:
+        
+        // The numVerticesX and numVerticesY arguments specify the resolution of
+        // the tessellation.  The maxZ argument, if not 0, specifies the maximum
+        // height of the "bulge" in the middle of the surface.
+        
         FlattishRectangularSurface(GLsizei numVerticesX, GLsizei numVerticesY,
                                    GLfloat maxZ = 0.0f);
         virtual ~FlattishRectangularSurface();
+        
+        // Redefinitions of virtual functions from Agl::SurfacePNT.
         
         virtual const GLfloat* positions() const;
         virtual GLsizeiptr     positionsSize() const;
@@ -48,13 +60,23 @@ namespace Agl
         virtual const GLfloat* textureCoords() const;
         virtual GLsizeiptr     textureCoordsSize() const;
         
+        // Redefinitions of virtual functions from Agl::Surface.
+        
         virtual GLsizei        elementsSize() const;
         virtual GLenum         primitiveMode() const;
         
     protected:
+        
+        // Redefinition of a virtual function from Agl::Surface.
+        // The elements are a sequence of triangle strips, where each strip runs
+        // the full range of X coordinates (from -0.5 to 0.5).
+        
         virtual GLuint*        elements() const;
         
     private:
+        
+        // Details of the class' data are hidden in the .cpp file.
+        
         class Imp;
         std::unique_ptr<Imp> _m;
     };

@@ -21,7 +21,13 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglShader.h
+// AglSphericalHarmonicsFragmentShader.h
+//
+// A class derived from Agl::FragmentShaderPNT for a GLSL fragment shader
+// implementing the Ramamoorthi and Hanrahan algorithm for diffuse shading
+// using spherical harmonics.  The implementation is based on code from
+// "OpenGL Programming Guide (Eighth Edition)" by Shreiner, Sellers, Kessenich and
+// Licea-Kane, using light-probe image data for Old Town Square, Fort Collins, CO.
 //
 
 #ifndef __AglSphericalHarmonicsFragmentShader__
@@ -35,6 +41,7 @@ namespace Agl
     class SphericalHarmonicsFragmentShader : public FragmentShaderPNT
     {
     public:
+        
         SphericalHarmonicsFragmentShader();
         virtual ~SphericalHarmonicsFragmentShader();
         
@@ -44,9 +51,14 @@ namespace Agl
         
         using FragmentShaderPNT::preDraw;
         
+        // Redefinition of a virtual function from Agl::FragmentShaderPNT.
+        
         virtual void    preDraw(SurfacePNT*);
         
     private:
+        
+        // Details of the class' data are hidden in the .cpp file.
+        
         class Imp;
         std::unique_ptr<Imp> _m;
     };

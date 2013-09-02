@@ -21,7 +21,11 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglSurfacePNT.h
+// AglSurfacePNT.h
+//
+// A class derived from Agl::Surface for a surface having positions, normals and
+// texture coordinates (the "P", "N" and "T").  This class serves as a base class
+// for more specialized surfaces.
 //
 
 #ifndef __AglSurfacePNT__
@@ -37,32 +41,70 @@ namespace Agl
     
     class TextureUbyte;
     
-    // PNT stands for "Position, Normal, Texture coordinate".
-    
     class SurfacePNT : public Surface
     {
     public:
+        
         SurfacePNT();
         virtual ~SurfacePNT();
 
+        // A derived class must redefine this virtual function to return the
+        // array of positions for the vertices of the surface (each position
+        // being four coordinates, X, Y, Z, W).
+        
         virtual const GLfloat* positions() const = 0;
+        
+        // A derived class must redefine this virtual function to return the
+        // size (in bytes) of the value returned by positions().
+        
         virtual GLsizeiptr     positionsSize() const = 0;
 
+        // A derived class must redefine this virtual function to return the
+        // array of normal vectors for the vertices of the surface (each normal
+        // being three coordinates, X, Y, Z).
+        
         virtual const GLfloat* normals() const = 0;
+
+        // A derived class must redefine this virtual function to return the
+        // size (in bytes) of the value returned by normals().
+        
         virtual GLsizeiptr     normalsSize() const = 0;
 
+        // A derived class must redefine this virtual function to return the
+        // array of texture coordinates for the vertices of the surface (each
+        // element of the texture coordinates being two values, S and T).
+        
         virtual const GLfloat* textureCoords() const = 0;
+
+        // A derived class must redefine this virtual function to return the
+        // size (in bytes) of the value returned by textureCoords().
+        
         virtual GLsizeiptr     textureCoordsSize() const = 0;
+        
+        // Set this surface to use the specified texture for the specified
+        // texture unit.  If the texture unit is invalid, a std::out_of_range
+        // exception is thrown.
         
         void                   setTexture(TextureUbyte*,
                                           GLenum unit = GL_TEXTURE0);
+        
+        // Access the texture being used by this surface for the specified
+        // texture unit.  If the texture unit is invalid, a std::out_of_range
+        // exception is thrown.
+        
         TextureUbyte*          texture(GLenum unit = GL_TEXTURE0);
         const TextureUbyte*    texture(GLenum unit = GL_TEXTURE0) const;
+        
+        // Set and get the model matrix to be used to transform this surface
+        // before drawing it.
         
         void                   setModelMatrix(const Imath::M44f&);
         const Imath::M44f&     modelMatrix() const;
 
     private:
+        
+        // Details of the class' data are hidden in the .cpp file.
+        
         class Imp;
         std::unique_ptr<Imp> _m;
     };

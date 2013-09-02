@@ -21,7 +21,9 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglTexture.h
+// AglTexture.h
+//
+// A base class for a texture to be assigned to an Agl::Surface.
 //
 
 #ifndef __AglTexture__
@@ -35,16 +37,42 @@ namespace Agl
     class Texture
     {
     public:
+        
+        // The target should be a valid argument for glBindTexture() (e.g.,
+        // GL_TEXTURE_2D).
+        
         Texture(GLenum target);
         virtual ~Texture();
         
+        // Access the texture specified to the constructor.
+        
         GLenum          target() const;
         
+        // Generate the texture object.
+        
         void            build();
+        
+        // Access the identifier for the texture object.
+        
         GLuint          id() const;
         
+        // Bind the texture to the specified texture unit.  The implementation
+        // keeps track of which texture is bound, so it will not make an
+        // additional call to glBindTexture() if this texture is already bound.
+        // If the texture unit is not valid, a std::out_of_range exception is
+        // thrown.
+        
         void            bind(GLenum unit = GL_TEXTURE0);
+        
+        // Returns true if this texture is already bound to the specified texture
+        // unit.  If the texture unit is not valid, a std::out_of_range exception
+        // is thrown.
+        
         bool            isBound(GLenum unit = GL_TEXTURE0);
+        
+        // A cache for the maximum number of texture units supported by the
+        // implementation of OpenGL, to avoid unnecessary calls to
+        // glGetIntegerv().
         
         static GLsizei  maxTextureUnits();
         
@@ -57,11 +85,14 @@ namespace Agl
         void            unbind();
         
     private:
+
+        // Details of the class' data are hidden in the .cpp file.
+        // This pattern also prevents instances from being copied, which makes
+        // sense because copies would share OpenGL resource that would get
+        // released when one instance is deleted.
+        
         class Imp;
         std::unique_ptr<Imp> _m;
-        
-        // Instances cannot be copied, because copies would share OpenGL resource
-        // that would get released when one instance is deleted.
     };
  
 }

@@ -21,7 +21,7 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglTexture.cpp
+// AglTexture.cpp
 //
 
 #include "AglTexture.h"
@@ -37,6 +37,11 @@ namespace Agl
         Imp(GLenum t) : target(t), id(0) {}
         GLenum  target;
         GLuint  id;
+        
+        // This vector is indexed by texture units (normalized so that GL_TEXTURE0
+        // has index 0).  A unit's entry in the vector is a map from texture
+        // target identifiers to the Agl::Texture currently bound to that target
+        // for the unit.
         
         typedef std::map<size_t, Texture*>  TargetToTexture;
         static std::vector<TargetToTexture> unitBindings;
@@ -95,9 +100,17 @@ namespace Agl
             glActiveTexture(unit);
             glBindTexture(_m->target, id());
             
+            // Extend the Imp::unitBindings vector so it is long enough to have
+            // an entry for the (normalized) texture unit.  This approach makes
+            // the assumption that "lower" texture units (e.g., GL_TEXTURE0) are
+            // commonly used, and "higher" texture unis (e.g., GL_TEXTURE0 + N
+            // for a large N) are not used in most applications.
+            
             size_t u = unit - GL_TEXTURE0;
             if (Imp::unitBindings.size() <= u)
                 Imp::unitBindings.resize(u + 1);
+            
+            // Record this texture binding so isBound() can find it.
             
             Imp::unitBindings[u][_m->target] = this;
         }

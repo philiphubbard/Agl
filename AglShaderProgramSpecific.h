@@ -21,7 +21,13 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglShaderProgramSpecific.h
+// AglShaderProgramSpecific.h
+//
+// A template class derived from Agl::ShaderProgram, with the template arguments
+// specifying a vertex shader class, a fragment shader class, and a surface
+// class that are mutually compatiable.  The API of the template class performs
+// type checking for associations between instances of the shader classes and
+// of the surface class.
 //
 
 #ifndef __AglShaderProgramSpecific__
@@ -33,31 +39,65 @@
 namespace Agl
 {
     
+    // VShader is the vertex shader class, FShader is the fragment shader
+    // class, Surf is the surface class.
+    
     template <class VShader, class FShader, class Surf>
     class ShaderProgramSpecific : public ShaderProgram
     {
     public:
+        
         ShaderProgramSpecific();
         virtual ~ShaderProgramSpecific();
         
+        // Set the vertex shader instance for this shader program.  If the
+        // argument shader is not a vertex shader, then a std::invalid_argument
+        // exception is thrown.
+        
         void            setVertexShader(VShader*);
+        
+        // Access the vertex shader instance for this shader program.
+        
         VShader*        vertexShader();
         const VShader*  vertexShader() const;
         
+        // Set the fragment shader instance for this shader program.  If the
+        // argument shader is not a fragment shader, then a std::invalid_argument
+        // exception is thrown.
+        
         void            setFragmentShader(FShader*);
+        
+        // Access the fragment shader instance for this shader program.
+        
         FShader*        fragmentShader();
         const FShader*  fragmentShader() const;
         
+        // Associate the specified surface with this shader program, so that
+        // surface will be among those drawn by the inherited draw() function.
+        
         void            addSurface(Surf*);
+        
+        // Remove the association between the specified surface and this shader
+        // program.
+        
         void            removeSurface(Surf*);
         
     protected:
+        
+        // Redefinitions of virtual functions from Agl::ShaderProgram.
+        
         virtual void    postLink();
         virtual void    preDraw();
         virtual void    drawSurfaces();
         virtual void    postDraw();
         
     private:
+        
+        // Details of the class' data are "hidden" in the Imp.h file.
+        // This pattern also prevents instances from being copied, which makes
+        // sense because copies would share OpenGL resource that would get
+        // released when one instance is deleted.
+
         class Imp;
         std::unique_ptr<Imp> _m;
     };

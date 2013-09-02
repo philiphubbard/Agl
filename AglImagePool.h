@@ -21,7 +21,15 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglImagePool.h
+// AglImagePool.h
+//
+// A class to manage the memory for images, avoiding unnecessary allocations
+// when one thread repeatedly produces images that are consumed by another
+// thread.  Memory allocated by the producer and freed by the consumer is
+// retained in a pool, so actual allocations are necessary only if the producer
+// gets ahead of the consumer.  Since the class is designed to support the
+// producer and consumer being in separate threads, the operations of this class
+// are thread safe.
 //
 
 #ifndef __AglImagePool__
@@ -35,20 +43,37 @@ namespace Agl
     class ImagePool
     {
     public:
+        
         ImagePool();
         ~ImagePool();
         
+        // Set the size of images that will be managed by this class.  If this
+        // routine is called to set the image size to be non-zero more than once,
+        // a std::runtime_error exception is thrown.
+        
         void        setImageSize (GLsizei width, GLsizei height,
                                   GLsizei bytesPerPixel);
+        
+        // Access the size of the images managed by this class.
         
         GLsizei     imageWidth() const;
         GLsizei     imageHeight() const;
         GLsizei     bytesPerPixel() const;
         
+        // Obtain image memory from the pool.  If setImageSize() has not been
+        // called to set the image size to be non-zero, a std::runtime_error
+        // exception is thrown.
+        
         GLubyte*    alloc();
+        
+        // Return image memory to the pool for reuse.
+        
         void        free(GLubyte*);
         
     private:
+
+        // Details of the class' data are hidden in the .cpp file.
+        
         class Imp;
         std::unique_ptr<Imp> _m;
     };

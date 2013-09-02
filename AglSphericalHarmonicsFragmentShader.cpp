@@ -21,7 +21,7 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglShader.cpp
+// AglSphericalHarmonicsFragmentShader.cpp
 //
 
 #include "AglSphericalHarmonicsFragmentShader.h"
@@ -34,10 +34,10 @@ namespace Agl
     class SphericalHarmonicsFragmentShader::Imp
     {
     public:
-        static const char* text;
+        static const char* code;
     };
     
-    const char* SphericalHarmonicsFragmentShader::Imp::text =
+    const char* SphericalHarmonicsFragmentShader::Imp::code =
     "#version 150\n"
     "uniform sampler2D tex;\n"
     "in vec2 vs_texCoord;\n"
@@ -77,7 +77,7 @@ namespace Agl
     "}\n";
     
     SphericalHarmonicsFragmentShader::SphericalHarmonicsFragmentShader() :
-    FragmentShaderPNT(Imp::text), _m(new Imp)
+    FragmentShaderPNT(Imp::code), _m(new Imp)
     {
     }
     

@@ -21,7 +21,7 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglSurfacePNT.cpp
+// AglSurfacePNT.cpp
 //
 
 #include "AglSurfacePNT.h"

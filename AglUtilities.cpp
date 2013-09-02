@@ -21,14 +21,14 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglUtilities.cpp
+// AglUtilities.cpp
 //
 
 #include "AglUtilities.h"
 
 namespace Agl
 {
-        std::string errorString(GLenum error)
+    std::string errorString(GLenum error)
     {
         switch (error)
         {
@@ -56,7 +56,8 @@ namespace Agl
         if (rowLength == 0)
             rowLength = width;
         
-        const GLubyte* origPtr0a = orig + bytesPerPixel * (skipRows * rowLength + skipPixels);
+        const GLubyte* origPtr0a = orig + bytesPerPixel * (skipRows * rowLength +
+                                                           skipPixels);
         const GLubyte* origPtr0b = origPtr0a + bytesPerPixel;
         const GLubyte* origPtr1a = origPtr0a + rowLength * bytesPerPixel;
         const GLubyte* origPtr1b = origPtr1a + bytesPerPixel;

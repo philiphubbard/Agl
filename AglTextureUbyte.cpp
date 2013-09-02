@@ -21,7 +21,7 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglTextureUbyte.cpp
+// AglTextureUbyte.cpp
 //
 
 #include "AglTextureUbyte.h"
@@ -61,6 +61,7 @@ namespace Agl
         
         // TODO: Replace with glTexStorage2D() and glTexSubImage2D(), when
         // the former becomes available on OS X.
+        
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_BASE_LEVEL, 0);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAX_LEVEL, 0);
         

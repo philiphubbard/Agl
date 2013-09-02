@@ -21,14 +21,14 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglShaderProgramSpecificImp.h
+// AglShaderProgramSpecificImp.h
 //
 // The template definitions in the this header file should be considered
 // private implementation details.
 //
 
-#ifndef __AglShaderProgramSpecificImp_h
-#define __AglShaderProgramSpecificImp_h
+#ifndef __AglShaderProgramSpecificImp__
+#define __AglShaderProgramSpecificImp__
 
 #include <set>
 
@@ -133,7 +133,7 @@ namespace Agl
         {
             _m->vertexShader->preDraw(surface);
             _m->fragmentShader->preDraw(surface);
-            surface->drawElementBuffer(this);
+            surface->drawElementArrayBuffer(this);
         }
     }
 

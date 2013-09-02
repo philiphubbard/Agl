@@ -21,7 +21,7 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglShader.cpp
+// AglShader.cpp
 //
 
 #include "AglShader.h"
@@ -35,17 +35,17 @@ namespace Agl
     class Shader::Imp
     {
     public:
-        Imp(GLenum typ, const std::string& txt) :
-            id(0), type(typ), text(txt),
+        Imp(GLenum typ, const std::string& cod) :
+            id(0), type(typ), code(cod),
             program(0) {}
         GLuint              id;
         GLenum              type;
-        std::string         text;
+        std::string         code;
         ShaderProgram*      program;
     };
     
-    Shader::Shader(GLenum shaderType, const std::string& text) :
-    _m(new Imp(shaderType, text))
+    Shader::Shader(GLenum shaderType, const std::string& code) :
+    _m(new Imp(shaderType, code))
     {
     }
     
@@ -62,7 +62,7 @@ namespace Agl
     void Shader::build()
     {
         _m->id = glCreateShader(_m->type);
-        const GLchar* str = _m->text.c_str();
+        const GLchar* str = _m->code.c_str();
         glShaderSource(_m->id, 1, &str, 0);
         
         glCompileShader(_m->id);

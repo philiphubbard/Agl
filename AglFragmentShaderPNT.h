@@ -21,7 +21,12 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglFragmentShaderPNT.h
+// AglFragmentShaderPNT.h
+//
+// A class derived from Agl::Shader for a fragment shader compatible with
+// surfaces having positions, normals and texture coordinates (the "P", "N"
+// and "T").  This class serves as a base class for more specialized fragment
+// shaders.
 //
 
 #ifndef __AglFragmentShaderPNT__
@@ -37,17 +42,48 @@ namespace Agl
     class FragmentShaderPNT : public Shader
     {
     public:
-        FragmentShaderPNT(const std::string& text);
+        
+        // The code argument is the text of the GLSL shader code.
+        
+        FragmentShaderPNT(const std::string& code);
         virtual ~FragmentShaderPNT();
+        
+        // A derived class can redefine this virtual function to do special
+        // behaviors when a surface is associated with this shader instance.
+        // The derived class should then call this base class function.
         
         virtual void        surfaceAdded(SurfacePNT*);
         
+        // A derived class can redefine this virtual function to do special
+        // behavior after this shader is linked with its shader program.  The
+        // derived class should then call this base class function.
+        
         virtual void        postLink();
+        
+        // A derived class can redefine this virtual function to do special
+        // surface-specific behavior after this shader is linked with its shader
+        // program.  The derived class shoudl then call this base class function.
+        
         virtual void        postLink(SurfacePNT*);
         
+        // A derived class can redefine this virtual function to do special
+        // behavior before each time this shader is used for drawing any surfaces
+        // for a given frame. The derived class should then call this base class
+        // function.
+        
         virtual void        preDraw();
+
+        // A derived class can redefine this virtual function to do special
+        // behavior before each time this shader is used for drawing each specific
+        // surface. The derived class should then call this base class function.
+        
         virtual void        preDraw(SurfacePNT*);
         
+        // A derived class can redefine this virtual function to do special
+        // behavior after each time this shader has been used for drawing
+        // all surfaces for a given frame.  The derived class should then call this
+        // base class function.
+
         virtual void        postDraw();
     };
     

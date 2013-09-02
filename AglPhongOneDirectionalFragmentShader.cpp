@@ -21,7 +21,7 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglShader.cpp
+// AglPhongOneDirectionalFragmentShader.cpp
 //
 
 #include "AglPhongOneDirectionalFragmentShader.h"
@@ -36,7 +36,7 @@ namespace Agl
     class PhongOneDirectionalFragmentShader::Imp
     {
     public:
-        static const char*  text;
+        static const char*  code;
         
         Imath::V3f          ambientColor;
         Imath::V3f          lightColor;
@@ -52,7 +52,7 @@ namespace Agl
         GLint               strengthUniform;
     };
     
-    const char* PhongOneDirectionalFragmentShader::Imp::text =
+    const char* PhongOneDirectionalFragmentShader::Imp::code =
     "#version 150\n"
     "uniform sampler2D tex;\n"
     "uniform vec3 ambient;\n"
@@ -80,7 +80,7 @@ namespace Agl
     "}\n";
     
     PhongOneDirectionalFragmentShader::PhongOneDirectionalFragmentShader() :
-    FragmentShaderPNT(Imp::text), _m(new Imp)
+    FragmentShaderPNT(Imp::code), _m(new Imp)
     {
         // Defaults.
         
@@ -149,12 +149,18 @@ namespace Agl
     {
         FragmentShaderPNT::postLink();
         
-        _m->ambientColorUniform = glGetUniformLocation(shaderProgram()->id(), "ambient");
-        _m->lightColorUniform = glGetUniformLocation(shaderProgram()->id(), "lightColor");
-        _m->lightDirectionUniform = glGetUniformLocation(shaderProgram()->id(), "lightDirection");
-        _m->halfVectorUniform = glGetUniformLocation(shaderProgram()->id(), "halfVector");
-        _m->shininessUniform = glGetUniformLocation(shaderProgram()->id(), "shininess");
-        _m->strengthUniform = glGetUniformLocation(shaderProgram()->id(), "strength");
+        _m->ambientColorUniform = glGetUniformLocation(shaderProgram()->id(),
+                                                       "ambient");
+        _m->lightColorUniform = glGetUniformLocation(shaderProgram()->id(),
+                                                     "lightColor");
+        _m->lightDirectionUniform = glGetUniformLocation(shaderProgram()->id(),
+                                                         "lightDirection");
+        _m->halfVectorUniform = glGetUniformLocation(shaderProgram()->id(),
+                                                     "halfVector");
+        _m->shininessUniform = glGetUniformLocation(shaderProgram()->id(),
+                                                    "shininess");
+        _m->strengthUniform = glGetUniformLocation(shaderProgram()->id(),
+                                                   "strength");
         
         // Use assertions rather than exceptions here because the shader text
         // not set by the caller.
@@ -171,7 +177,8 @@ namespace Agl
     {
         FragmentShaderPNT::preDraw();
         
-        Imath::V3f halfVector = (Imath::V3f(0.0f, 0.0f, 1.0f) + _m->lightDirection).normalized();
+        Imath::V3f halfVector =
+            (Imath::V3f(0.0f, 0.0f, 1.0f) + _m->lightDirection).normalized();
         
         glUniform3fv(_m->ambientColorUniform, 1, _m->ambientColor.getValue());
         glUniform3fv(_m->lightColorUniform, 1, _m->lightColor.getValue());

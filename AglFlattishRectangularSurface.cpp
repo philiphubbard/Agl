@@ -21,7 +21,7 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglShader.cpp
+// AglFlattishRectangularSurface.cpp
 //
 
 #include "AglFlattishRectangularSurface.h"

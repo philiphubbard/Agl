@@ -21,7 +21,10 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglTextureUbyte.h
+// AglTextureUbyte.h
+//
+// A class derived from Agl::Texture for an OpenGL texture whose color components
+// are unsigned bytes.
 //
 
 #ifndef __AglTextureUbyte__
@@ -36,21 +39,38 @@ namespace Agl
     class TextureUbyte : public Texture
     {
     public:
+        
+        // The target should be a valid argument for glBindTexture() (e.g.,
+        // GL_TEXTURE_2D).
+        
         TextureUbyte(GLenum target);
         virtual ~TextureUbyte();
 
-        // The caller retains ownership of the data.
-
+        // Set the data of the texture.  Note that the mipmapping is disabled
+        // for the texture, so only one piece of data is necessary.  Note also
+        // that the caller retains ownership of the data.  The internalFormat and
+        // format arguments have the same meanings as for glTexImage2D().  The
+        // rowLength, skipPixels and skipRows arguments set the
+        // GL_UNPACK_ROW_LENGTH, GL_UNPACK_SKIP_PIXELS and GL_UNPACK_SKIP_ROWS
+        // parameters, respectively, allowing the texture to be set from a smaller
+        // region within the data argument (if the arguments have values other
+        // than their default values of 0).
+        
         void    setData(GLubyte* data, GLsizei width, GLsizei height,
                         GLint internalFormat = GL_RGBA,
                         GLenum format = GL_RGBA,
                         GLint rowLength = 0, GLint skipPixels = 0,
                         GLint skipRows = 0);
         
+        // Access the dimensions of the texture.
+        
         GLsizei width() const;
         GLsizei height() const;
 
     private:
+
+        // Details of the class' data are hidden in the .cpp file.
+        
         class Imp;
         std::unique_ptr<Imp> _m;
     };

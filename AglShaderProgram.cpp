@@ -21,7 +21,7 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglShaderProgram.cpp
+// AglShaderProgram.cpp
 //
 
 #include "AglShaderProgram.h"

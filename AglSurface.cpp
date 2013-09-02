@@ -21,7 +21,7 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglSurface.cpp
+// AglSurface.cpp
 //
 
 #include "AglSurface.h"
@@ -34,9 +34,9 @@ namespace Agl
     class Surface::Imp
     {
     public:
-        Imp() : elementBufferObject(0) {}
+        Imp() : elementArrayBufferObject(0) {}
         std::map<GLuint, GLuint>    programToVertexArrayObject;
-        GLuint                      elementBufferObject;
+        GLuint                      elementArrayBufferObject;
     };
     
     Surface::Surface() :
@@ -50,7 +50,7 @@ namespace Agl
         {
             glDeleteVertexArrays(1, &elem.second);
         }
-        glDeleteBuffers(1, &_m->elementBufferObject);
+        glDeleteBuffers(1, &_m->elementArrayBufferObject);
     }
         
     void Surface::setVertexArrayObject(GLuint id, ShaderProgram* shaderProgram)
@@ -72,30 +72,30 @@ namespace Agl
             return 0;
     }
     
-    void Surface::buildElementBufferObject()
+    void Surface::buildElementArrayBufferObject()
     {
         glPrimitiveRestartIndex(elementRestart());
         glEnable(GL_PRIMITIVE_RESTART);
 
-        glGenBuffers(1, &_m->elementBufferObject);
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _m->elementBufferObject);
+        glGenBuffers(1, &_m->elementArrayBufferObject);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _m->elementArrayBufferObject);
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, elementsSize(), elements(),
                      GL_STATIC_DRAW);
     }
     
-    GLuint Surface::elementBufferObject() const
+    GLuint Surface::elementArrayBufferObject() const
     {
-        return _m->elementBufferObject;
+        return _m->elementArrayBufferObject;
     }
     
-    void Surface::drawElementBuffer(ShaderProgram* shaderProgram)
+    void Surface::drawElementArrayBuffer(ShaderProgram* shaderProgram)
     {
         glBindVertexArray(vertexArrayObject(shaderProgram));
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementBufferObject());
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementArrayBufferObject());
         glDrawElements(primitiveMode(), elementsSize(), GL_UNSIGNED_INT, NULL);
     }
     
-    GLuint Surface::elementRestart() const
+    GLuint Surface::elementRestart()
     {
         return INT32_MAX;
     }

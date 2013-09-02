@@ -21,7 +21,7 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglShader.cpp
+// AglFragmentShaderPNT.cpp
 //
 
 #include "AglFragmentShaderPNT.h"
@@ -29,8 +29,8 @@
 namespace Agl
 {
         
-    FragmentShaderPNT::FragmentShaderPNT(const std::string& text)
-        : Shader(GL_FRAGMENT_SHADER, text)
+    FragmentShaderPNT::FragmentShaderPNT(const std::string& code)
+        : Shader(GL_FRAGMENT_SHADER, code)
     {
     }
     

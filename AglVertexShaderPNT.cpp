@@ -21,7 +21,7 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglShader.cpp
+// AglVertexShaderPNT.cpp
 //
 
 #include "AglVertexShaderPNT.h"
@@ -49,8 +49,8 @@ namespace Agl
         Imath::M44f projMatrix;
     };
     
-    VertexShaderPNT::VertexShaderPNT(const std::string& text) :
-        Shader(GL_VERTEX_SHADER, text), _m(new Imp)
+    VertexShaderPNT::VertexShaderPNT(const std::string& code) :
+        Shader(GL_VERTEX_SHADER, code), _m(new Imp)
     {
     }
     
@@ -86,8 +86,9 @@ namespace Agl
     
     void VertexShaderPNT::postLink()
     {
-        _m->modelViewProjMatrixUniform = glGetUniformLocation(shaderProgram()->id(),
-                                                              modelViewProjectionMatrixUniformName());
+        _m->modelViewProjMatrixUniform =
+            glGetUniformLocation(shaderProgram()->id(),
+                                 modelViewProjectionMatrixUniformName());
         _m->normalMatrixUniform = glGetUniformLocation(shaderProgram()->id(),
                                                        normalMatrixUniformName());
         
@@ -101,32 +102,40 @@ namespace Agl
         if (_m->modelViewProjMatrixUniform < 0)
         {
             std::strstream s;
-            s << "Agl::VertexShaderPNT::postLink() \"" << typeid(*this).name() << "\":\n"
-              << "modelViewProjMatrixUniform not located";
+            s << "Agl::VertexShaderPNT::postLink() \"" << typeid(*this).name()
+              << "\":\n" << "modelViewProjMatrixUniform not located";
             throw std::invalid_argument(s.str());
         }
-
+        
+        if (_m->normalMatrixUniform < 0)
+        {
+            std::strstream s;
+            s << "Agl::VertexShaderPNT::postLink() \"" << typeid(*this).name()
+              << "\":\n" << "normalMatrixUniform not located";
+            throw std::invalid_argument(s.str());
+        }
+        
         if (_m->texCoordAttribute < 0)
         {
             std::strstream s;
-            s << "Agl::VertexShaderPNT::postLink() \"" << typeid(*this).name() << "\":\n"
-              << "texCoordAttribute not located";
+            s << "Agl::VertexShaderPNT::postLink() \"" << typeid(*this).name()
+              << "\":\n" << "texCoordAttribute not located";
             throw std::invalid_argument(s.str());
         }
 
         if (_m->positionAttribute < 0)
         {
             std::strstream s;
-            s << "Agl::VertexShaderPNT::postLink() \"" << typeid(*this).name() << "\":\n"
-              << "positionAttribute not located";
+            s << "Agl::VertexShaderPNT::postLink() \"" << typeid(*this).name()
+              << "\":\n" << "positionAttribute not located";
             throw std::invalid_argument(s.str());
         }
 
         if (_m->normalAttribute < 0)
         {
             std::strstream s;
-            s << "Agl::VertexShaderPNT::postLink() \"" << typeid(*this).name() << "\":\n"
-              << "normalAttribute not located";
+            s << "Agl::VertexShaderPNT::postLink() \"" << typeid(*this).name()
+              << "\":\n" << "normalAttribute not located";
             throw std::invalid_argument(s.str());
         }
     }
@@ -141,22 +150,30 @@ namespace Agl
         glGenBuffers(1, &vertexBufferObject);
         glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObject);
         
-        glBufferData(GL_ARRAY_BUFFER, surface->positionsSize() + surface->normalsSize() +
+        glBufferData(GL_ARRAY_BUFFER,
+                     surface->positionsSize() + surface->normalsSize() +
                      surface->textureCoordsSize(),
                      NULL, GL_STATIC_DRAW);
-        glBufferSubData(GL_ARRAY_BUFFER, 0,
+        glBufferSubData(GL_ARRAY_BUFFER,
+                        0,
                         surface->positionsSize(), surface->positions());
-        glBufferSubData(GL_ARRAY_BUFFER, surface->positionsSize(),
+        glBufferSubData(GL_ARRAY_BUFFER,
+                        surface->positionsSize(),
                         surface->normalsSize(), surface->normals());
-        glBufferSubData(GL_ARRAY_BUFFER, surface->positionsSize() + surface->normalsSize(),
+        glBufferSubData(GL_ARRAY_BUFFER,
+                        surface->positionsSize() + surface->normalsSize(),
                         surface->textureCoordsSize(), surface->textureCoords());
         
-        glVertexAttribPointer((GLuint) _m->positionAttribute, 4, GL_FLOAT, GL_FALSE, 0,
+        glVertexAttribPointer((GLuint) _m->positionAttribute, 4, GL_FLOAT,
+                              GL_FALSE, 0,
                               NULL);
-        glVertexAttribPointer((GLuint) _m->normalAttribute, 3, GL_FLOAT, GL_FALSE, 0,
+        glVertexAttribPointer((GLuint) _m->normalAttribute, 3, GL_FLOAT,
+                              GL_FALSE, 0,
                               (const GLvoid*) surface->positionsSize());
-        glVertexAttribPointer((GLuint) _m->texCoordAttribute, 2, GL_FLOAT, GL_FALSE, 0,
-                              (const GLvoid*) (surface->positionsSize() + surface->normalsSize()));
+        glVertexAttribPointer((GLuint) _m->texCoordAttribute, 2, GL_FLOAT,
+                              GL_FALSE, 0,
+                              (const GLvoid*) (surface->positionsSize() +
+                                               surface->normalsSize()));
         
         glEnableVertexAttribArray((GLuint) _m->positionAttribute);
         glEnableVertexAttribArray((GLuint) _m->normalAttribute);

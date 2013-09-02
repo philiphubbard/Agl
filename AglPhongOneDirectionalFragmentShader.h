@@ -21,7 +21,12 @@
 // http://opensource.org/licenses/MIT
 
 //
-//  AglShader.h
+// AglPhongOneDirectionalFragmentShader.h
+//
+// A class derived from Agl::FragmentShaderPNT for a GLSL fragment shader
+// implementing a Phong reflecton model with one directional light source.
+// The implementation is based on code from "OpenGL Programming Guide (Eighth
+// Edition)" by Shreiner, Sellers, Kessenich and Licea-Kane.
 //
 
 #ifndef __AglPhongOneDirectionalFragmentShader__
@@ -36,20 +41,35 @@ namespace Agl
     class PhongOneDirectionalFragmentShader : public FragmentShaderPNT
     {
     public:
+        
         PhongOneDirectionalFragmentShader();
         virtual ~PhongOneDirectionalFragmentShader();
+        
+        // Set and get the color of the ambient light.  Each component should
+        // be between 0 and 1.
         
         void            setAmbientColor(const Imath::V3f&);
         Imath::V3f      ambientColor() const;
         
+        // Set and get the color of the directional light.  Each component should
+        // be between 0 and 1.
+        
         void            setLightColor(const Imath::V3f&);
         Imath::V3f      lightColor() const;
+        
+        // Set and get the vector pointing to the light from the origin, assuming
+        // the camera is at the origin looking down the negative Z axis.
         
         void            setLightDirection(const Imath::V3f&);
         Imath::V3f      lightDirection() const;
         
+        // Set and get the shininess (exponent) for specular reflections.
+        
         void            setShininess(GLfloat);
         GLfloat         shininess() const;
+        
+        // Set and get a strength factor for the specular reflection component.
+        // A strength of 0 disables specular reflections.
         
         void            setStrength(GLfloat);
         GLfloat         strength() const;
@@ -60,11 +80,16 @@ namespace Agl
         
         using FragmentShaderPNT::postLink;
         
+        // Redefinitions of virtual functions from Agl::FragmentShaderPNT.
+
         virtual void    postLink();
         virtual void    preDraw();
         virtual void    preDraw(SurfacePNT*);
         
     private:
+
+        // Details of the class' data are hidden in the .cpp file.
+        
         class Imp;
         std::unique_ptr<Imp> _m;
     };
