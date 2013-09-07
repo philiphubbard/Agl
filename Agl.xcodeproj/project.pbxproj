@@ -39,7 +39,34 @@
 		D326FFE217B7FDFD00CF8309 /* AglShader.h in Headers */ = {isa = PBXBuildFile; fileRef = D326FFE017B7FDFD00CF8309 /* AglShader.h */; };
 		D326FFE417B8022F00CF8309 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D326FFE317B8022F00CF8309 /* OpenGL.framework */; };
 		D326FFE617B809A900CF8309 /* libIex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D326FFE517B809A900CF8309 /* libIex.dylib */; };
+		D3B2789117DBD5EA00459DC6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3B2789017DBD5EA00459DC6 /* main.cpp */; };
+		D3B2789317DBD5EA00459DC6 /* AglTest.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3B2789217DBD5EA00459DC6 /* AglTest.1 */; };
+		D3B2789717DBD74100459DC6 /* libAgl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D326FF7E17B7CBA000CF8309 /* libAgl.dylib */; };
+		D3B2789C17DBD89500459DC6 /* AglTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3B2789A17DBD89500459DC6 /* AglTest.cpp */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D3B2789817DBD82C00459DC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D326FF7617B7CBA000CF8309 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D326FF7D17B7CBA000CF8309;
+			remoteInfo = Agl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D3B2788C17DBD5EA00459DC6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				D3B2789317DBD5EA00459DC6 /* AglTest.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D326FF7E17B7CBA000CF8309 /* libAgl.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libAgl.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +103,11 @@
 		D326FFE317B8022F00CF8309 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		D326FFE517B809A900CF8309 /* libIex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libIex.dylib; path = ../../../../../../usr/local/lib/libIex.dylib; sourceTree = "<group>"; };
 		D39A511D17D230410026F899 /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		D3B2788E17DBD5EA00459DC6 /* AglTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AglTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3B2789017DBD5EA00459DC6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D3B2789217DBD5EA00459DC6 /* AglTest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = AglTest.1; sourceTree = "<group>"; };
+		D3B2789A17DBD89500459DC6 /* AglTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AglTest.cpp; sourceTree = "<group>"; };
+		D3B2789B17DBD89500459DC6 /* AglTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglTest.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +117,14 @@
 			files = (
 				D326FFE417B8022F00CF8309 /* OpenGL.framework in Frameworks */,
 				D326FFE617B809A900CF8309 /* libIex.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3B2788B17DBD5EA00459DC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3B2789717DBD74100459DC6 /* libAgl.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +138,7 @@
 				D326FFE317B8022F00CF8309 /* OpenGL.framework */,
 				D3B2788917DBD46200459DC6 /* src */,
 				D39A511D17D230410026F899 /* README.txt */,
+				D3B2788F17DBD5EA00459DC6 /* AglTest */,
 				D326FF7F17B7CBA000CF8309 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				D326FF7E17B7CBA000CF8309 /* libAgl.dylib */,
+				D3B2788E17DBD5EA00459DC6 /* AglTest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,6 +187,17 @@
 				D326FF8717B7CC5200CF8309 /* AglUtilities.cpp */,
 			);
 			path = src;
+			sourceTree = "<group>";
+		};
+		D3B2788F17DBD5EA00459DC6 /* AglTest */ = {
+			isa = PBXGroup;
+			children = (
+				D3B2789A17DBD89500459DC6 /* AglTest.cpp */,
+				D3B2789B17DBD89500459DC6 /* AglTest.h */,
+				D3B2789017DBD5EA00459DC6 /* main.cpp */,
+				D3B2789217DBD5EA00459DC6 /* AglTest.1 */,
+			);
+			path = AglTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +246,24 @@
 			productReference = D326FF7E17B7CBA000CF8309 /* libAgl.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
+		D3B2788D17DBD5EA00459DC6 /* AglTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3B2789417DBD5EA00459DC6 /* Build configuration list for PBXNativeTarget "AglTest" */;
+			buildPhases = (
+				D3B2788A17DBD5EA00459DC6 /* Sources */,
+				D3B2788B17DBD5EA00459DC6 /* Frameworks */,
+				D3B2788C17DBD5EA00459DC6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3B2789917DBD82C00459DC6 /* PBXTargetDependency */,
+			);
+			name = AglTest;
+			productName = AglTest;
+			productReference = D3B2788E17DBD5EA00459DC6 /* AglTest */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -215,6 +286,7 @@
 			projectRoot = "";
 			targets = (
 				D326FF7D17B7CBA000CF8309 /* Agl */,
+				D3B2788D17DBD5EA00459DC6 /* AglTest */,
 			);
 		};
 /* End PBXProject section */
@@ -241,7 +313,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D3B2788A17DBD5EA00459DC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3B2789117DBD5EA00459DC6 /* main.cpp in Sources */,
+				D3B2789C17DBD89500459DC6 /* AglTest.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D3B2789917DBD82C00459DC6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D326FF7D17B7CBA000CF8309 /* Agl */;
+			targetProxy = D3B2789817DBD82C00459DC6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		D326FF8017B7CBA000CF8309 /* Debug */ = {
@@ -323,6 +412,22 @@
 			};
 			name = Release;
 		};
+		D3B2789517DBD5EA00459DC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D3B2789617DBD5EA00459DC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -343,6 +448,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D3B2789417DBD5EA00459DC6 /* Build configuration list for PBXNativeTarget "AglTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3B2789517DBD5EA00459DC6 /* Debug */,
+				D3B2789617DBD5EA00459DC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
