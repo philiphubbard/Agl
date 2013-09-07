@@ -33,7 +33,7 @@
 #ifndef __AglShaderProgramSpecific__
 #define __AglShaderProgramSpecific__
 
-#include "Agl/AglShaderProgram.h"
+#include "AglShaderProgram.h"
 #include <OpenGL/gl3.h>
 
 namespace Agl
@@ -107,6 +107,6 @@ namespace Agl
 // The template definitions in the following header file should be considered
 // private implementation details.
 
-#include "Agl/AglShaderProgramSpecificImp.h"
+#include "AglShaderProgramSpecificImp.h"
 
 #endif
