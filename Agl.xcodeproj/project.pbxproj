@@ -96,6 +96,23 @@
 			children = (
 				D326FFE517B809A900CF8309 /* libIex.dylib */,
 				D326FFE317B8022F00CF8309 /* OpenGL.framework */,
+				D3B2788917DBD46200459DC6 /* src */,
+				D39A511D17D230410026F899 /* README.txt */,
+				D326FF7F17B7CBA000CF8309 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D326FF7F17B7CBA000CF8309 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D326FF7E17B7CBA000CF8309 /* libAgl.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D3B2788917DBD46200459DC6 /* src */ = {
+			isa = PBXGroup;
+			children = (
 				D326FFE017B7FDFD00CF8309 /* AglShader.h */,
 				D326FFDF17B7FDFD00CF8309 /* AglShader.cpp */,
 				D326FFB617B7E6A000CF8309 /* AglShaderProgram.h */,
@@ -126,17 +143,8 @@
 				D326FF8517B7CC5200CF8309 /* AglImagePool.cpp */,
 				D326FF8817B7CC5200CF8309 /* AglUtilities.h */,
 				D326FF8717B7CC5200CF8309 /* AglUtilities.cpp */,
-				D39A511D17D230410026F899 /* README.txt */,
-				D326FF7F17B7CBA000CF8309 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		D326FF7F17B7CBA000CF8309 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D326FF7E17B7CBA000CF8309 /* libAgl.dylib */,
-			);
-			name = Products;
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
