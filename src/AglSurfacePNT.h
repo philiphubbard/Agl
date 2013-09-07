@@ -31,7 +31,7 @@
 #ifndef __AglSurfacePNT__
 #define __AglSurfacePNT__
 
-#include "Agl/AglSurface.h"
+#include "AglSurface.h"
 #include <OpenEXR/ImathMatrix.h>
 #include <OpenGL/gl3.h>
 #include <memory>

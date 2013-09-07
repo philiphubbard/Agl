@@ -32,7 +32,7 @@
 #ifndef __AglFragmentShaderPNT__
 #define __AglFragmentShaderPNT__
 
-#include "Agl/AglShader.h"
+#include "AglShader.h"
 #include <OpenGL/gl3.h>
 
 namespace Agl

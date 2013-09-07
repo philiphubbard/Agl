@@ -31,7 +31,7 @@
 #ifndef __AglBasicVertexShader__
 #define __AglBasicVertexShader__
 
-#include "Agl/AglVertexShaderPNT.h"
+#include "AglVertexShaderPNT.h"
 
 namespace Agl
 {

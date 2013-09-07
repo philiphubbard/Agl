@@ -32,7 +32,7 @@
 #ifndef __AglVertexShaderPNT__
 #define __AglVertexShaderPNT__
 
-#include "Agl/AglShader.h"
+#include "AglShader.h"
 #include <OpenEXR/ImathMatrix.h>
 #include <OpenGL/gl3.h>
 #include <memory>

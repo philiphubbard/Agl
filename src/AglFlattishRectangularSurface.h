@@ -32,7 +32,7 @@
 #ifndef __AglFlattishRectangularSurface__
 #define __AglFlattishRectangularSurface__
 
-#include "Agl/AglSurfacePNT.h"
+#include "AglSurfacePNT.h"
 
 namespace Agl
 {

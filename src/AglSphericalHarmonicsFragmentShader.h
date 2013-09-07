@@ -33,7 +33,7 @@
 #ifndef __AglSphericalHarmonicsFragmentShader__
 #define __AglSphericalHarmonicsFragmentShader__
 
-#include "Agl/AglFragmentShaderPNT.h"
+#include "AglFragmentShaderPNT.h"
 
 namespace Agl
 {

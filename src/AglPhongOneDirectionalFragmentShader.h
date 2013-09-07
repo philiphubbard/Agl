@@ -32,7 +32,7 @@
 #ifndef __AglPhongOneDirectionalFragmentShader__
 #define __AglPhongOneDirectionalFragmentShader__
 
-#include "Agl/AglFragmentShaderPNT.h"
+#include "AglFragmentShaderPNT.h"
 #include <OpenEXR/ImathVec.h>
 
 namespace Agl

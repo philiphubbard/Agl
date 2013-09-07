@@ -30,7 +30,7 @@
 #ifndef __AglTextureUbyte__
 #define __AglTextureUbyte__
 
-#include "Agl/AglTexture.h"
+#include "AglTexture.h"
 #include <OpenGL/gl3.h>
 
 namespace Agl
