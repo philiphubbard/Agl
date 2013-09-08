@@ -47,7 +47,7 @@ Agl was developed in Xcode (specifically, version 4.6.3). The Xcode project buil
 
 AglTest is set up as another target in the Xcode project for Agl.  The project settings are in the the Agl.xcodeproj/project.pbxproj file.
 
-The project has build setting of "Installation Directory" to "@rpath".  This setting allows the library to be found when it is embedded in an application bundle.  The application should have a build setting of "Runpath Search Paths" to "@loader_path/../Frameworks" and a "Copy Files" build phase to copy the library into the Frameworks section of its bundle.
+The project has a build setting of "Installation Directory" to "@rpath".  This setting allows the library to be found when it is embedded in an application bundle.  The application should have a build setting of "Runpath Search Paths" to "@loader_path/../Frameworks" and a "Copy Files" build phase to copy the library into the Frameworks section of its bundle.
 
 Future Work
 -----------
