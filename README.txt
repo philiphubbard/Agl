@@ -22,6 +22,15 @@ Agl also contains a few utilities related to images.  Agl::ImagePool avoids repe
 A companion project, AglTest, has confidence tests for (some parts of) Agl.
 
 
+Testing
+
+AglTest is a set of confidence tests for (parts of) Agl.
+
+The only part of Agl that is tested currently is Agl::reduceImageBy2().  It is simple to test that it takes an image of known pixel values and reduces it to the expected result pixel values.
+
+The rest of Agl performs OpenGL rendering operations which are more difficult to test, and thus not tested at this time.
+
+
 Building
 
 Agl depends on the Imath library from the IlmBase part of the OpenEXR project.  This code is available on Github or from http://www.openexr.com/downloads.html.
@@ -32,6 +41,8 @@ Agl was developed in Xcode (specifically, version 4.6.3). The Xcode project buil
 
 	#include <OpenEXR/ImathMatrix.h>
 
+AglTest is set up as another target in the Xcode project for Agl.  The project settings are in the the Agl.xcodeproj/project.pbxproj file.
+
 
 Future Work
 
@@ -39,3 +50,4 @@ Future Work
 
 * The Apple "OpenGL ES Programming Guide for iOS" states that vertex array objects are more efficient in iOS if vertex data is interleaved.  Consider switching to this approach. 
 
+* Consider an approach for testing the OpenGL rendering capabilities of Agl, presumably with a test application that does some simple, predictable rendering an uses raw OpenGL calls to read back the rendered image so it can be verified.
