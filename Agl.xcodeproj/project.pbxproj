@@ -102,7 +102,7 @@
 		D326FFE017B7FDFD00CF8309 /* AglShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglShader.h; sourceTree = "<group>"; };
 		D326FFE317B8022F00CF8309 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		D326FFE517B809A900CF8309 /* libIex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libIex.dylib; path = ../../../../../../usr/local/lib/libIex.dylib; sourceTree = "<group>"; };
-		D39A511D17D230410026F899 /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		D39A511D17D230410026F899 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		D3B2788E17DBD5EA00459DC6 /* AglTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AglTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B2789017DBD5EA00459DC6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D3B2789217DBD5EA00459DC6 /* AglTest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = AglTest.1; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 				D326FFE517B809A900CF8309 /* libIex.dylib */,
 				D326FFE317B8022F00CF8309 /* OpenGL.framework */,
 				D3B2788917DBD46200459DC6 /* src */,
-				D39A511D17D230410026F899 /* README.txt */,
+				D39A511D17D230410026F899 /* README.md */,
 				D3B2788F17DBD5EA00459DC6 /* AglTest */,
 				D326FF7F17B7CBA000CF8309 /* Products */,
 			);
@@ -456,6 +456,7 @@
 				D3B2789617DBD5EA00459DC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
