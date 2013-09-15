@@ -108,6 +108,7 @@
 		D3B2789217DBD5EA00459DC6 /* AglTest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = AglTest.1; sourceTree = "<group>"; };
 		D3B2789A17DBD89500459DC6 /* AglTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AglTest.cpp; sourceTree = "<group>"; };
 		D3B2789B17DBD89500459DC6 /* AglTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AglTest.h; sourceTree = "<group>"; };
+		D3DE3C7217E67E7500067C90 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +139,7 @@
 				D326FFE317B8022F00CF8309 /* OpenGL.framework */,
 				D3B2788917DBD46200459DC6 /* src */,
 				D39A511D17D230410026F899 /* README.md */,
+				D3DE3C7217E67E7500067C90 /* LICENSE.txt */,
 				D3B2788F17DBD5EA00459DC6 /* AglTest */,
 				D326FF7F17B7CBA000CF8309 /* Products */,
 			);
