@@ -92,7 +92,7 @@ namespace Agl
     {
         glBindVertexArray(vertexArrayObject(shaderProgram));
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementArrayBufferObject());
-        glDrawElements(primitiveMode(), elementsSize(), GL_UNSIGNED_INT, NULL);
+        glDrawElements(primitiveMode(), elementsSize() / sizeof(GLuint), GL_UNSIGNED_INT, NULL);
     }
     
     GLuint Surface::elementRestart()
